@@ -49,7 +49,7 @@ const resetGame = () => {
 
   boxes.forEach(box => {
     box.innerText = "";
-    box.classList.remove("win");
+    box.classList.remove("win","o","x");
   });
 
   gameMode ? unlockBoard() : lockBoard();
@@ -127,6 +127,7 @@ const checkWinnerForAI = (board) => {
 
 const playBotAtIndex = (i) => {
   boxes[i].innerText = "X";
+  boxes[i].classList.add("x");   
   boxes[i].disabled = true;
   moveCount++;
   clickSound.play();
@@ -136,6 +137,7 @@ const playBotAtIndex = (i) => {
 
 const mediumBotMove = () => {
   let board = getBoardState();
+
 
   for (let i = 0; i < 9; i++) {
     if (board[i] === "") {
@@ -159,11 +161,13 @@ const mediumBotMove = () => {
     }
   }
 
+
   const emptyBoxes = [...boxes].filter(b => b.innerText === "");
   if (!emptyBoxes.length) return;
 
   const randomBox = emptyBoxes[Math.floor(Math.random() * emptyBoxes.length)];
   randomBox.innerText = "X";
+  randomBox.classList.add("x");   
   randomBox.disabled = true;
   moveCount++;
   clickSound.play();
@@ -177,10 +181,19 @@ boxes.forEach(box => {
     if (!gameMode || box.innerText !== "") return;
 
     if (gameMode === "PVP") {
-      box.innerText = turnO ? "O" : "X";
+      if (turnO) {
+        box.innerText = "O";
+        box.classList.add("o");   
+      } else {
+        box.innerText = "X";
+        box.classList.add("x");  
+      }
       turnO = !turnO;
-    } else {
-      box.innerText = "O"; 
+    } 
+    else {
+
+      box.innerText = "O";
+      box.classList.add("o");  
     }
 
     box.disabled = true;
