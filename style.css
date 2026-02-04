@@ -156,37 +156,86 @@ body {
 
 
 @media (max-width: 600px) {
-  .Game {
-    width: 90vmin;
-    height: 90vmin;
+
+  body {
+    padding: 10px;
+    justify-content: flex-start;
   }
 
-  .box {
-    font-size: 12vmin;
-  }
-
-  #msg {
-    font-size: 1.3rem;
+  .container {
+    height: auto;               
+    margin-top: 0.5rem;
   }
 
   .mode-select {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
+    margin-bottom: 0.8rem;
+    gap: 0.6rem;
   }
 
   .mode-select button {
-    width: 80%;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
   }
-}
 
-@media (max-width: 900px) {
+  h1 {
+    font-size: 1.6rem;
+    margin: 0.4rem 0 0.6rem;
+  }
+
+  .msg-container {
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+
+  #msg {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+  }
+
   .Game {
-    width: 70vmin;
-    height: 70vmin;
+    width: 88vmin;
+    height: 88vmin;
+    margin: 0 auto;           
+    padding: 3vmin;
+    gap: 1.2vmin;
+
   }
 
   .box {
-    font-size: 9vmin;
+    width: 20vmin;                
+    height: 20vmin;
+    font-size: 10vmin;
+    border-radius: 0.8rem;
+  }
+
+  #reset,
+  #new-btn {
+    padding: 0.6rem 1.4rem;
+    font-size: 0.85rem;
+    margin: 0.6rem;
   }
 }
+
+
+@media (max-width: 900px) {
+  .Game {
+    width: 60vmin;
+    height: 60vmin;
+    margin: 0 auto;           
+    padding: 4vmin;
+    gap: 1.2vmin;
+
+  }
+    .container {
+    height: auto;               
+    margin-top: 0.5rem;
+  }
+
+  .box {
+    width: 16vmin;                
+    height: 16vmin;
+    font-size: 10vmin;
+    border-radius: 0.8rem;
+  }
+}
+
