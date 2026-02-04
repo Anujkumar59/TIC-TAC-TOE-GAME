@@ -130,6 +130,7 @@ const playBotAtIndex = (i) => {
   boxes[i].classList.add("x");   
   boxes[i].disabled = true;
   moveCount++;
+  clickSound.currentTime = 0;
   clickSound.play();
 
   if (!checkWinner() && moveCount === 9) showDraw();
@@ -170,6 +171,7 @@ const mediumBotMove = () => {
   randomBox.classList.add("x");   
   randomBox.disabled = true;
   moveCount++;
+  clickSound.currentTime = 0;
   clickSound.play();
 
   if (!checkWinner() && moveCount === 9) showDraw();
@@ -198,6 +200,7 @@ boxes.forEach(box => {
 
     box.disabled = true;
     moveCount++;
+    clickSound.currentTime = 0;
     clickSound.play();
 
     if (checkWinner()) return;
